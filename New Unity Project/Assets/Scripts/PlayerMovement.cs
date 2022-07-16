@@ -9,32 +9,37 @@ public class PlayerMovement : MonoBehaviour
 
     bool isGrounded = true;
 
+    public Timer timer;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        timer = GameObject.Find("TimerScriptHolder").GetComponent<Timer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("w") || Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown("w") || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             if(isGrounded == true)
             {
                 GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
+
+                timer.ResetTimer();
+
                 isGrounded = false;
             }
         }
-        else if (Input.GetKey("a"))
+        else if (Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow))
         {
             transform.position = transform.position + new Vector3((-MovementSpeed) * Time.deltaTime, 0, 0);
         }
-        else if (Input.GetKeyDown("s"))
+        else if (Input.GetKeyDown("s") || Input.GetKey(KeyCode.DownArrow))
         {
 
         }
-        else if (Input.GetKey("d"))
+        else if (Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow))
         {
             transform.position = transform.position + new Vector3(MovementSpeed * Time.deltaTime, 0, 0);
         }
