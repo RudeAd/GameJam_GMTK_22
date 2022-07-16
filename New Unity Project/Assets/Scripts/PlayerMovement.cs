@@ -18,11 +18,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("w"))
+        if(Input.GetKeyDown("w") || Input.GetKeyDown(KeyCode.Space))
         {
             if(isGrounded == true)
             {
                 GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
+                isGrounded = false;
             }
         }
         else if (Input.GetKey("a"))
@@ -43,18 +44,20 @@ public class PlayerMovement : MonoBehaviour
     //make sure u replace "floor" with your gameobject name.on which player is standing
     void OnCollisionEnter2D(Collision2D theCollision)
     {
-        if (theCollision.gameObject.name == "Block_Blue_1")
+        if (theCollision.gameObject.tag == "Block")
         {
             isGrounded = true;
         }
     }
-
+    
+    /*
     //consider when character is jumping .. it will exit collision.
     void OnCollisionExit2D(Collision2D theCollision)
     {
-        if (theCollision.gameObject.name == "Block_Blue_1")
+        if (theCollision.gameObject.tag == "Block")
         {
             isGrounded = false;
         }
     }
+    */
 }
