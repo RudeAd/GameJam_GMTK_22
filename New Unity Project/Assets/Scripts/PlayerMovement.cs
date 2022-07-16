@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("w") || Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown("w") || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             if(isGrounded == true)
             {
@@ -31,15 +31,15 @@ public class PlayerMovement : MonoBehaviour
                 isGrounded = false;
             }
         }
-        else if (Input.GetKey("a"))
+        else if (Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow))
         {
             transform.position = transform.position + new Vector3((-MovementSpeed) * Time.deltaTime, 0, 0);
         }
-        else if (Input.GetKeyDown("s"))
+        else if (Input.GetKeyDown("s") || Input.GetKey(KeyCode.DownArrow))
         {
 
         }
-        else if (Input.GetKey("d"))
+        else if (Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow))
         {
             transform.position = transform.position + new Vector3(MovementSpeed * Time.deltaTime, 0, 0);
         }
