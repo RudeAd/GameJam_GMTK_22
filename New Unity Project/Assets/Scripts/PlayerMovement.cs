@@ -9,10 +9,12 @@ public class PlayerMovement : MonoBehaviour
 
     bool isGrounded = true;
 
+    public Timer timer;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        timer = GameObject.Find("TimerScriptHolder").GetComponent<Timer>();
     }
 
     // Update is called once per frame
@@ -23,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
             if(isGrounded == true)
             {
                 GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
+
+                timer.ResetTimer();
+
                 isGrounded = false;
             }
         }
