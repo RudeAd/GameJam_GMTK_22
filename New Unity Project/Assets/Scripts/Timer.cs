@@ -9,8 +9,6 @@ public class Timer : MonoBehaviour
 
     private Slider TimerSlider;
 
-    float tid = 0f;
-
     private GameObject TimeOutCanvas;
 
     // Start is called before the first frame update
@@ -31,7 +29,7 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tid += Time.deltaTime;
+        //tid += Time.deltaTime;
 
         TimerSlider.value -= Time.deltaTime;
         
@@ -46,5 +44,10 @@ public class Timer : MonoBehaviour
         Time.timeScale = 0;
 
         TimeOutCanvas.SetActive(true);
+    }
+
+    public void ResetTimer()
+    {
+        TimerSlider.value = TimerSlider.maxValue;
     }
 }
