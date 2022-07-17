@@ -41,7 +41,8 @@ public class Timer : MonoBehaviour
 
     private void TimeOut()
     {
-        Time.timeScale = 0;
+        
+        //Time.timeScale = 0;
 
         TimeOutCanvas.SetActive(true);
     }

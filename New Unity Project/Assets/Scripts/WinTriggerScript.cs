@@ -27,7 +27,7 @@ public class WinTriggerScript : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             WinCanvas.SetActive(true);
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
             Debug.Log("Won");
         }
     }
