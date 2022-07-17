@@ -8,10 +8,14 @@ public class WinTriggerScript : MonoBehaviour
 
     private GameObject WinCanvas;
 
+    private GameObject PlayerCharacter;
+    private GameObject TimerSlider;
     // Start is called before the first frame update
     void Start()
     {
         WinCanvas = GameObject.Find("WinCanvas");
+        PlayerCharacter = GameObject.Find("PLayerCharacter");
+        TimerSlider = GameObject.Find("TimerCanvas");
 
         WinCanvas.SetActive(false);
     }
@@ -28,7 +32,8 @@ public class WinTriggerScript : MonoBehaviour
         {
             WinCanvas.SetActive(true);
             //Time.timeScale = 0;
-            Debug.Log("Won");
+            TimerSlider.SetActive(false);
+            PlayerCharacter.SetActive(false);
         }
     }
 }

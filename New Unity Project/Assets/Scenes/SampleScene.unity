@@ -5185,6 +5185,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 8981751348719300865, guid: a36bcf7e345900f45b36f693897fa213, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8981751348719300876, guid: a36bcf7e345900f45b36f693897fa213, type: 3}
       propertyPath: timer
       value: 
