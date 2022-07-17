@@ -6,21 +6,18 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public float MaxTimerTime;
-
     private Slider TimerSlider;
-
     private GameObject TimeOutCanvas;
-
     private GameObject PlayerCharacter;
+    private GameObject BGAudio;
 
     // Start is called before the first frame update
     void Start()
     {
         TimerSlider = GameObject.Find("TimerCountDown").GetComponent<Slider>();
-
         TimeOutCanvas = GameObject.Find("TimeOutCanvas");
-
         PlayerCharacter = GameObject.Find("PlayerCharacter");
+        BGAudio = GameObject.Find("BGAudio");
 
         TimeOutCanvas.SetActive(false);
 
@@ -50,7 +47,7 @@ public class Timer : MonoBehaviour
         TimeOutCanvas.SetActive(true);
 
         PlayerCharacter.SetActive(false);
-
+        BGAudio.SetActive(false);
     }
 
     public void ResetTimer()
