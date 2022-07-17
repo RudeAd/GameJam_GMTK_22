@@ -20,5 +20,12 @@ public class ChangeSceneScript : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("SampleScene");
+        Time.timeScale = 1;
+    }
+
+    public void ToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1;
     }
 }
