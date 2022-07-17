@@ -11,6 +11,8 @@ public class Timer : MonoBehaviour
 
     private GameObject TimeOutCanvas;
 
+    private GameObject PlayerCharacter;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,7 @@ public class Timer : MonoBehaviour
 
         TimeOutCanvas = GameObject.Find("TimeOutCanvas");
 
+        PlayerCharacter = GameObject.Find("PlayerCharacter");
 
         TimeOutCanvas.SetActive(false);
 
@@ -41,9 +44,13 @@ public class Timer : MonoBehaviour
 
     private void TimeOut()
     {
-        Time.timeScale = 0;
+        
+        //Time.timeScale = 0;
 
         TimeOutCanvas.SetActive(true);
+
+        PlayerCharacter.SetActive(false);
+
     }
 
     public void ResetTimer()
