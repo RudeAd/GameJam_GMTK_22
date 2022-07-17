@@ -11,10 +11,13 @@ public class PlayerMovement : MonoBehaviour
 
     public Timer timer;
 
+    private AudioSource Jumpsound;
+
     // Start is called before the first frame update
     void Start()
     {
         timer = GameObject.Find("TimerScriptHolder").GetComponent<Timer>();
+        Jumpsound = GameObject.Find("JumpSound").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
             if(isGrounded == true)
             {
                 GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
+
+                Jumpsound.Play();
 
                 timer.ResetTimer();
 
