@@ -16,7 +16,7 @@ public class WinTriggerScript : MonoBehaviour
     void Start()
     {
         WinCanvas = GameObject.Find("WinCanvas");
-        PlayerCharacter = GameObject.Find("PLayerCharacter");
+        PlayerCharacter = GameObject.Find("PlayerCharacter");
         TimerSlider = GameObject.Find("TimerCanvas");
         //BGAudio = GameObject.Find("BGAudio");
 
